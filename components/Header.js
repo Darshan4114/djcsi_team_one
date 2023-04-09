@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useContext, useState } from "react";
 import logo from "../public/assets/logo.png";
 import more from "../public/assets/more.svg";
@@ -15,8 +16,9 @@ function Header() {
   return (
     <div className="flex p-10 w-full justify-between">
       {/* <h1>Context Value: {context.nameContext}</h1> */}
-
-      <Image src={logo} width={130} height={110} contain className="" />
+      <Link className="" href="/">
+        <Image src={logo} width={130} height={110} contain className="" />
+      </Link>
       <div className="flex justify-between items-center w-full">
         <div className="flex justify-evenly items-center w-3/4">
           {/* Features */}

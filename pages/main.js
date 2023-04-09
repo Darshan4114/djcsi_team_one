@@ -70,7 +70,7 @@ function third() {
 
       <div className="flex flex-col justify-center items-center text-xl space-y-12">
         <h1 onClick={() => router.push("menu")}>View Menu </h1>
-        <h1>Explore Offers </h1>
+        <h1 onClick={() => router.push("offers")}>Explore Offers </h1>
         <h1>My Points</h1>
         <h1>Contact Us </h1>
         <h1>Know More About Us </h1>

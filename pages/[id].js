@@ -6,6 +6,7 @@ import Header from "@/c/Header";
 
 export default function foodItemDetail({ foodItemId }) {
   const [foodItem, setFoodItem] = useState([]);
+  const [result, setResult] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -51,7 +52,10 @@ export default function foodItemDetail({ foodItemId }) {
 
     fetch("http://127.0.0.1:2000/users", requestOptions)
       .then((response) => response.json())
-      .then((result) => console.log(result.body))
+      .then((result) => {
+        console.log("rex", result);
+        setResult(JSON.stringify(result, 0, 2));
+      })
       .catch((error) => console.log("error", error));
   };
 
@@ -79,6 +83,9 @@ export default function foodItemDetail({ foodItemId }) {
         >
           Buy!
         </button>
+        <p style={{ inlineSize: "250px", overflowWrap: "break-word" }}>
+          {result}
+        </p>
       </div>
     </div>
   );
