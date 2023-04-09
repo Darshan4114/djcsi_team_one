@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "crud/*": ["firebase/crud/*"],
+      "crud-lite/*": ["firebase/crud-lite/*"],
+      "@/c/*": ["components/*"],
+      "@/u/*": ["utils/*"],
+      "@/f/*": ["components/forms/*"],
+      "styl/*": ["components/styled/*"]
+    }
+  }
+}

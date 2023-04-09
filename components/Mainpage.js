@@ -1,15 +1,13 @@
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import sideimage from "../assets/sideimage.jpg"
-
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import sideimage from "../public/assets/sideimage.jpg";
 
 export default function Mainpage({ data }) {
+  const apiUrl = "https://jsonplaceholder.typicode.com/todos";
 
-  const apiUrl = 'https://jsonplaceholder.typicode.com/todos'
+  const [posts, setPosts] = useState();
 
-  const [posts, setPosts] = useState()
-
-  let displayData
+  let displayData;
 
   // function pullJson() {
   //   fetch(apiUrl)
@@ -41,18 +39,11 @@ export default function Mainpage({ data }) {
   // })
   useEffect(() => {
     // pullJson()
-  }, [])
+  }, []);
 
   return (
-    <div className='w-full space-y-2'>
-
-      <Image
-        src={sideimage}
-        width={120}
-        height={120}
-        className='w-20'
-        cover
-      />
+    <div className="w-full space-y-2">
+      <Image src={sideimage} width={120} height={120} className="w-20" cover />
       {/* {
         data.map(function (todo) {
           return (
@@ -61,12 +52,9 @@ export default function Mainpage({ data }) {
         })
 
       } */}
-
     </div>
-  )
+  );
 }
-
-
 
 // export async function getServerSideProps() {
 //   const res = await fetch(`https://jsonplaceholder.typicode.com/todos/`)
@@ -76,9 +64,9 @@ export default function Mainpage({ data }) {
 // }
 
 export async function getStaticProps() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
   const data = await res.json();
   return {
     props: { data }, // will be passed to the page component as props
-  }
+  };
 }

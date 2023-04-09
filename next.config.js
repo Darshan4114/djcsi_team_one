@@ -3,11 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['firebasestorage.googleapis.com'],
+    domains: ["firebasestorage.googleapis.com", "picsum.photos"],
   },
-}
+};
 
-const withVideos = require('next-videos')
-
-
-module.exports = nextConfig, withVideos()
+module.exports = nextConfig;
